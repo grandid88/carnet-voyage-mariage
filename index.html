@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Carnet de voyage d'Isabelle & Didier</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Parisienne&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#1f3555;--gold:#b88746;--paper:#f8f2e8;}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:'Cormorant Garamond',serif;background:var(--paper);color:var(--navy);line-height:1.8}
+.hero{height:100vh;background:url('escale3.jpg') center/cover;position:relative;display:flex;align-items:center;justify-content:center;text-align:center;color:white}
+.hero:before{content:'';position:absolute;inset:0;background:rgba(0,0,0,.55)}
+.hero-content{position:relative;padding:30px;max-width:900px}
+.stamp{display:inline-block;border:3px solid rgba(255,255,255,.85);padding:10px 18px;border-radius:50px;transform:rotate(-5deg);margin-bottom:20px}
+h1{font-size:3.2rem;margin:0}
+.names{font-family:'Parisienne',cursive;font-size:3rem}
+.subtitle{font-size:1.3rem;font-style:italic}
+.container{max-width:900px;margin:auto;padding:50px 18px}
+.route{text-align:center;color:var(--gold);font-size:1.25rem;margin-bottom:35px}
+.card{background:#fffdfa;border-radius:22px;overflow:hidden;box-shadow:0 10px 30px rgba(0,0,0,.08);margin-bottom:40px}
+.card img{width:100%;display:block}
+.content{padding:28px}
+.badge{color:var(--gold);font-weight:bold}
+.place{font-style:italic;color:#6d7890}
+.passport{display:inline-block;border:2px dashed var(--gold);padding:6px 12px;margin:12px 0;font-size:.95rem;color:var(--gold)}
+.final{background:var(--navy);color:white}
+.final .badge,.final .place,.final .passport{color:#f2d39a;border-color:#f2d39a}
+.footer{padding:90px 20px;text-align:center;background:#17304d;color:white}
+.signature{font-family:'Parisienne',cursive;font-size:3rem}
+.topbtn{position:fixed;right:20px;bottom:20px;background:var(--gold);color:white;text-decoration:none;padding:10px 14px;border-radius:50%}
+</style>
+</head>
+<body>
+<section class="hero" id="top">
+<div class="hero-content">
+<div class="stamp">✈ ISABELLE & DIDIER • 26 JUIN 2027 • 💍</div>
+<h1>Carnet de voyage</h1>
+<div class="names">Isabelle & Didier</div>
+<p class="subtitle">21 ans d'escales avant le grand départ</p>
+</div>
+</section>
+
+<div class="container">
+<div class="route">📍 Rencontre ↓ 👨‍👩‍👧‍👦 Famille ↓ 🌴 Voyage ↓ 💍 Engagement ↓ 🌴 Maurice</div>
+
+<div class="card">
+<img src="escale1.jpg"><div class="content">
+<div class="badge">📍 ESCALE N°1</div>
+<h2>Notre première rencontre</h2>
+<div class="passport">ENTRY STAMP • SAINT‑DOULCHARD • 2006</div>
+<div class="place">Parc de l'Hôtel de Ville</div>
+<p>C'est ici que nos chemins se sont croisés pour la première fois.</p>
+</div></div>
+
+<div class="card">
+<img src="escale2.jpg"><div class="content">
+<div class="badge">👨‍👩‍👧‍👦 ESCALE N°2</div>
+<h2>Nos premières vacances en famille</h2>
+<div class="passport">FAMILY TRIP • VENDÉE • ÉTÉ 2006</div>
+<p>Des souvenirs simples, des éclats de rire et le bonheur d'être ensemble.</p>
+</div></div>
+
+<div class="card">
+<img src="escale3.jpg"><div class="content">
+<div class="badge">🌴 ESCALE N°3</div>
+<h2>Notre premier voyage hors de France</h2>
+<div class="passport">ENTRY STAMP • MARTINIQUE • 2022</div>
+<p>La Martinique restera à jamais le symbole de notre goût commun pour l'évasion.</p>
+</div></div>
+
+<div class="card">
+<img src="escale4.jpg"><div class="content">
+<div class="badge">💍 ESCALE N°4</div>
+<h2>La demande en mariage</h2>
+<div class="passport">APPROVED • MARIAGE • MAI 2026</div>
+<p>Le lieu où la question a été posée. Le lieu où la réponse a été : ❤️ Oui ❤️</p>
+</div></div>
+
+<div class="card final">
+<img src="maurice.jpg"><div class="content">
+<div class="badge">🌴 DESTINATION FINALE</div>
+<h2>Île Maurice</h2>
+<div class="passport">TABLE D'HONNEUR • MAURICE • 2027</div>
+<p>Notre prochaine escale. Notre voyage de noces. Notre premier voyage en tant que mari et femme.</p>
+</div></div>
+</div>
+
+<div class="footer">
+<h2>Merci d'avoir été présents à chacune de nos escales.</h2>
+<p>Aujourd'hui, vous embarquez avec nous pour la plus belle de toutes. ❤️</p>
+<div class="signature">Isabelle & Didier</div>
+<p>2006 → 2027</p>
+</div>
+
+<a class="topbtn" href="#top">↑</a>
+</body>
+</html>
