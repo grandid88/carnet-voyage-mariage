@@ -25,22 +25,25 @@ body{margin:0;font-family:'Cormorant Garamond',serif;background:var(--cream);col
 
 a:focus-visible,.topbtn:focus-visible{outline:2px solid var(--gold-deep);outline-offset:3px}
 
-/* ---------- HERO ---------- */
-.hero{min-height:100vh;background:url('escale3.jpg') center/cover;position:relative;display:flex;align-items:center;justify-content:center;text-align:center;color:#fdf8ee}
-.hero:before{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(35,26,14,.30) 0%,rgba(35,26,14,.55) 62%,var(--cream) 100%)}
-.hero-content{position:relative;z-index:1;padding:40px 24px;max-width:640px;animation:heroFade 1.3s ease-out both}
+/* ---------- HERO (photo plein écran) ---------- */
+.hero{min-height:92vh;background:url('escale3.jpg') center/cover;position:relative;display:flex;align-items:center;justify-content:center;text-align:center;color:#fdf8ee}
+.hero:before{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(35,26,14,.20) 0%,rgba(35,26,14,.45) 70%,var(--cream) 100%)}
+.hero-content{position:relative;z-index:1;padding:40px 24px;animation:heroFade 1.3s ease-out both}
 @keyframes heroFade{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
 
-.rings-icon{width:74px;height:auto;margin-bottom:10px;filter:drop-shadow(0 2px 6px rgba(0,0,0,.25))}
+.rings-icon{width:84px;height:auto;margin-bottom:18px;filter:drop-shadow(0 2px 6px rgba(0,0,0,.3))}
 
-.stamp{display:inline-flex;flex-direction:column;align-items:center;gap:6px;border:1.5px solid var(--gold-light);padding:12px 30px;border-radius:50px;transform:rotate(-4deg);margin-bottom:26px;font-size:.85rem;letter-spacing:.18em;text-transform:uppercase}
+.stamp{display:inline-flex;flex-direction:column;align-items:center;gap:6px;border:1.5px solid var(--gold-light);padding:12px 30px;border-radius:50px;transform:rotate(-4deg);font-size:.85rem;letter-spacing:.18em;text-transform:uppercase}
 
-.kicker{font-size:.8rem;letter-spacing:.42em;text-transform:uppercase;color:var(--gold-light);margin:0 0 10px}
+/* ---------- TITLE SECTION (sur fond ivoire) ---------- */
+.title-section{text-align:center;padding:18px 24px 60px;max-width:640px;margin:auto}
 
-h1.title{font-size:1.5rem;font-weight:500;letter-spacing:.2em;text-transform:uppercase;margin:0}
+.kicker{font-size:.8rem;letter-spacing:.42em;text-transform:uppercase;color:var(--gold-deep);margin:0 0 14px}
 
-.names{font-family:'Great Vibes',cursive;font-size:4rem;line-height:1.15;margin:8px 0 4px;
-  background:linear-gradient(135deg,#f6ecce 0%,var(--gold) 55%,var(--gold-deep) 100%);
+h1.title{font-size:1.4rem;font-weight:500;letter-spacing:.22em;text-transform:uppercase;margin:0;color:var(--ink-soft)}
+
+.names{font-family:'Great Vibes',cursive;font-size:clamp(2.6rem,13vw,4.4rem);line-height:1.2;margin:14px 0 6px;
+  background:linear-gradient(135deg,#e3b65f 0%,var(--gold) 55%,var(--gold-deep) 100%);
   -webkit-background-clip:text;background-clip:text;color:transparent}
 
 .divider{display:flex;align-items:center;justify-content:center;gap:14px;width:230px;margin:12px auto 18px}
@@ -48,10 +51,10 @@ h1.title{font-size:1.5rem;font-weight:500;letter-spacing:.2em;text-transform:upp
 .divider .line.right{background:linear-gradient(90deg,var(--gold-light),transparent)}
 .divider svg{width:20px;height:20px;flex:none}
 
-.subtitle{font-size:1.2rem;font-style:italic;color:#f6ead0;margin:0}
+.subtitle{font-size:1.2rem;font-style:italic;color:var(--ink-soft);margin:0}
 
 /* ---------- LAYOUT ---------- */
-.container{max-width:760px;margin:auto;padding:70px 20px 20px}
+.container{max-width:760px;margin:auto;padding:0 20px 20px}
 
 .section-kicker{text-align:center;font-size:.8rem;letter-spacing:.4em;text-transform:uppercase;color:var(--gold-deep);margin:0 0 44px}
 
@@ -75,12 +78,12 @@ h1.title{font-size:1.5rem;font-weight:500;letter-spacing:.2em;text-transform:upp
 .place{font-style:italic;color:var(--sage)}
 .passport{display:inline-block;border:1.5px dashed var(--gold);padding:6px 16px;margin:12px 0;font-size:.82rem;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-deep);border-radius:30px}
 
-.leaf-corner{position:absolute;top:-14px;right:-16px;width:84px;height:auto;opacity:.55;pointer-events:none;transform:rotate(18deg)}
-.card:nth-child(even) .leaf-corner{left:-16px;right:auto;transform:scaleX(-1) rotate(18deg)}
+.leaf-corner{position:absolute;top:-10px;right:10px;width:52px;height:auto;opacity:.3;pointer-events:none;transform:rotate(18deg);z-index:0}
+.card:nth-child(even) .leaf-corner{left:10px;right:auto;transform:scaleX(-1) rotate(18deg)}
 
 .card.final{background:linear-gradient(150deg,var(--card) 0%,var(--cream-deep) 55%,var(--gold-light) 100%);border:1px solid var(--gold)}
 .card.final .badge,.card.final .passport{color:var(--gold-deep)}
-.card.final .leaf-corner.bottom{top:auto;bottom:-16px;right:auto;left:-16px;transform:scaleX(-1) rotate(-12deg);opacity:.45}
+.card.final .leaf-corner.bottom{top:auto;bottom:-10px;right:auto;left:10px;transform:scaleX(-1) rotate(-12deg);opacity:.3}
 
 /* ---------- FOOTER ---------- */
 .footer{position:relative;padding:110px 20px 90px;text-align:center;background:linear-gradient(180deg,var(--cream) 0%,var(--cream-deep) 100%);overflow:hidden}
@@ -170,16 +173,19 @@ h1.title{font-size:1.5rem;font-weight:500;letter-spacing:.2em;text-transform:upp
     <div class="stamp">
       ✈ Isabelle &amp; Didier<br>26 juin 2027 · 💍
     </div>
-    <p class="kicker">Carnet de voyage</p>
-    <h1 class="title">21 ans d'escales</h1>
-    <div class="names">Isabelle &amp; Didier</div>
-    <div class="divider">
-      <span class="line"></span>
-      <svg><use href="#flowerGold"/></svg>
-      <span class="line right"></span>
-    </div>
-    <p class="subtitle">avant le grand départ</p>
   </div>
+</section>
+
+<section class="title-section">
+  <p class="kicker">Carnet de voyage</p>
+  <h1 class="title">21 ans d'escales</h1>
+  <div class="names">Isabelle &amp; Didier</div>
+  <div class="divider">
+    <span class="line"></span>
+    <svg><use href="#flowerGold"/></svg>
+    <span class="line right"></span>
+  </div>
+  <p class="subtitle">avant le grand départ</p>
 </section>
 
 <div class="container">
@@ -210,9 +216,9 @@ h1.title{font-size:1.5rem;font-weight:500;letter-spacing:.2em;text-transform:upp
   </div>
 
   <div class="card">
-    <svg class="leaf-corner"><use href="#leafGold"/></svg>
     <img src="escale1.jpg" alt="Parc de l'Hôtel de Ville, Saint-Doulchard">
     <div class="content">
+      <svg class="leaf-corner"><use href="#leafGold"/></svg>
       <div class="badge">📍 Escale n°1</div>
       <h2>Notre première rencontre</h2>
       <div class="passport">Lieu • Saint-Doulchard • 2006</div>
@@ -222,9 +228,9 @@ h1.title{font-size:1.5rem;font-weight:500;letter-spacing:.2em;text-transform:upp
   </div>
 
   <div class="card">
-    <svg class="leaf-corner"><use href="#leafGold"/></svg>
     <img src="escale2.jpg" alt="Premières vacances en famille, Vendée">
     <div class="content">
+      <svg class="leaf-corner"><use href="#leafGold"/></svg>
       <div class="badge">👨‍👩‍👧‍👦 Escale n°2</div>
       <h2>Nos premières vacances en famille</h2>
       <div class="passport">Lieu • Vendée • Été 2006</div>
@@ -233,9 +239,9 @@ h1.title{font-size:1.5rem;font-weight:500;letter-spacing:.2em;text-transform:upp
   </div>
 
   <div class="card">
-    <svg class="leaf-corner"><use href="#leafGold"/></svg>
     <img src="escale3.jpg" alt="Premier voyage hors de France, Martinique">
     <div class="content">
+      <svg class="leaf-corner"><use href="#leafGold"/></svg>
       <div class="badge">🌴 Escale n°3</div>
       <h2>Notre premier voyage hors de France</h2>
       <div class="passport">Lieu • Martinique • 2022</div>
@@ -244,9 +250,9 @@ h1.title{font-size:1.5rem;font-weight:500;letter-spacing:.2em;text-transform:upp
   </div>
 
   <div class="card">
-    <svg class="leaf-corner"><use href="#leafGold"/></svg>
     <img src="escale4.jpg" alt="La demande en mariage">
     <div class="content">
+      <svg class="leaf-corner"><use href="#leafGold"/></svg>
       <div class="badge">💍 Escale n°4</div>
       <h2>La demande en mariage</h2>
       <div class="passport">Approuvé • Mariage • Mai 2026</div>
@@ -255,10 +261,10 @@ h1.title{font-size:1.5rem;font-weight:500;letter-spacing:.2em;text-transform:upp
   </div>
 
   <div class="card final">
-    <svg class="leaf-corner"><use href="#leafGold"/></svg>
-    <svg class="leaf-corner bottom"><use href="#leafGold"/></svg>
     <img src="maurice.jpg" alt="Île Maurice, table d'honneur">
     <div class="content">
+      <svg class="leaf-corner"><use href="#leafGold"/></svg>
+      <svg class="leaf-corner bottom"><use href="#leafGold"/></svg>
       <div class="badge">🌴 Destination finale</div>
       <h2>Île Maurice</h2>
       <div class="passport">Table d'honneur • Maurice • 2027</div>
