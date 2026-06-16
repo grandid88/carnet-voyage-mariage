@@ -105,9 +105,9 @@ h1.title{font-size:1.4rem;font-weight:500;letter-spacing:.22em;text-transform:up
 /* Photo sombre escale4 : légère correction de luminosité */
 .card img.dark-photo{filter:brightness(1.18) contrast(1.05)}
 
-.leaf-corner{position:absolute;top:-14px;right:-10px;width:90px;height:90px;object-fit:contain;opacity:.75;pointer-events:none;transform:rotate(10deg);z-index:0}
-.card:nth-child(even) .leaf-corner{right:-10px;left:auto;transform:rotate(-8deg)}
-.card.final .leaf-corner.bottom{top:auto;bottom:-14px;right:-10px;left:auto;transform:rotate(14deg);opacity:.65}
+.leaf-corner{position:absolute;top:-14px;right:8px;width:90px;height:90px;object-fit:contain;opacity:.75;pointer-events:none;transform:rotate(10deg);z-index:0}
+.card:nth-child(even) .leaf-corner{right:8px;left:auto;transform:rotate(-8deg)}
+.card.final .leaf-corner.bottom{top:auto;bottom:-14px;right:8px;left:auto;transform:rotate(14deg);opacity:.65}
 .card.final{background:linear-gradient(150deg,var(--card) 0%,var(--cream-deep) 55%,var(--gold-light) 100%);border:1px solid var(--gold)}
 .card.final .badge,.card.final .passport{color:var(--gold-deep)}
 
