@@ -81,7 +81,7 @@ h1.title{font-size:1.4rem;font-weight:500;letter-spacing:.22em;text-transform:up
 /* ---------- CARDS ---------- */
 .card{position:relative;background:var(--card);border:1px solid var(--gold-light);border-radius:20px;overflow:hidden;box-shadow:0 14px 34px rgba(156,122,45,.12);margin-bottom:48px;opacity:0;transform:translateY(26px);transition:opacity .9s ease,transform .9s ease}
 .card.visible{opacity:1;transform:none}
-.card img{width:100%;aspect-ratio:4/5;object-fit:contain;background:linear-gradient(160deg,var(--cream-deep),var(--cream));display:block}
+.card > img{width:100%;aspect-ratio:4/5;object-fit:contain;background:linear-gradient(160deg,var(--cream-deep),var(--cream));display:block}
 .content{padding:30px 30px 32px;position:relative}
 .badge{color:var(--gold-deep);font-weight:600;letter-spacing:.24em;text-transform:uppercase;font-size:.82rem}
 .card h2{font-size:1.7rem;font-weight:600;margin:10px 0 12px;color:var(--ink)}
@@ -105,9 +105,9 @@ h1.title{font-size:1.4rem;font-weight:500;letter-spacing:.22em;text-transform:up
 /* Photo sombre escale4 : légère correction de luminosité */
 .card img.dark-photo{filter:brightness(1.18) contrast(1.05)}
 
-.leaf-corner{position:absolute;top:-18px;right:-12px;width:110px;height:auto;opacity:.82;pointer-events:none;transform:rotate(12deg);z-index:0;object-fit:contain}
-.card:nth-child(even) .leaf-corner{left:-12px;right:auto;transform:scaleX(-1) rotate(12deg)}
-.card.final .leaf-corner.bottom{top:auto;bottom:-18px;right:auto;left:-12px;transform:scaleX(-1) rotate(-10deg);opacity:.7}
+.leaf-corner{position:absolute;top:-14px;right:-10px;width:90px;height:90px;object-fit:contain;opacity:.75;pointer-events:none;transform:rotate(10deg);z-index:0}
+.card:nth-child(even) .leaf-corner{left:-10px;right:auto;transform:scaleX(-1) rotate(10deg)}
+.card.final .leaf-corner.bottom{top:auto;bottom:-14px;right:auto;left:-10px;transform:scaleX(-1) rotate(-8deg);opacity:.65}
 .card.final{background:linear-gradient(150deg,var(--card) 0%,var(--cream-deep) 55%,var(--gold-light) 100%);border:1px solid var(--gold)}
 .card.final .badge,.card.final .passport{color:var(--gold-deep)}
 
@@ -255,7 +255,7 @@ h1.title{font-size:1.4rem;font-weight:500;letter-spacing:.22em;text-transform:up
   <div class="card">
     <img src="escale1.jpg" alt="Parc de l'Hôtel de Ville, Saint-Doulchard">
     <div class="content">
-      <img class="leaf-corner" src="Bouquet.png" alt="">
+      <img class="leaf-corner" src="BouquetTropical01-removebg-preview2.png" alt="">
       <div class="badge">📍 Escale n°1</div>
       <h2>Notre première rencontre</h2>
       <div class="passport">Lieu • Saint-Doulchard • 2006</div>
