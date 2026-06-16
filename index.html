@@ -105,12 +105,11 @@ h1.title{font-size:1.4rem;font-weight:500;letter-spacing:.22em;text-transform:up
 /* Photo sombre escale4 : légère correction de luminosité */
 .card img.dark-photo{filter:brightness(1.18) contrast(1.05)}
 
-.leaf-corner{position:absolute;top:-10px;right:10px;width:52px;height:auto;opacity:.3;pointer-events:none;transform:rotate(18deg);z-index:0}
-.card:nth-child(even) .leaf-corner{left:10px;right:auto;transform:scaleX(-1) rotate(18deg)}
-
+.leaf-corner{position:absolute;top:-18px;right:-12px;width:110px;height:auto;opacity:.82;pointer-events:none;transform:rotate(12deg);z-index:0;object-fit:contain}
+.card:nth-child(even) .leaf-corner{left:-12px;right:auto;transform:scaleX(-1) rotate(12deg)}
+.card.final .leaf-corner.bottom{top:auto;bottom:-18px;right:auto;left:-12px;transform:scaleX(-1) rotate(-10deg);opacity:.7}
 .card.final{background:linear-gradient(150deg,var(--card) 0%,var(--cream-deep) 55%,var(--gold-light) 100%);border:1px solid var(--gold)}
 .card.final .badge,.card.final .passport{color:var(--gold-deep)}
-.card.final .leaf-corner.bottom{top:auto;bottom:-10px;right:auto;left:10px;transform:scaleX(-1) rotate(-12deg);opacity:.3}
 
 /* ---------- FOOTER ---------- */
 .footer{position:relative;padding:56px 20px 70px;text-align:center;background:linear-gradient(180deg,var(--cream) 0%,var(--cream-deep) 100%);overflow:hidden}
@@ -197,7 +196,7 @@ h1.title{font-size:1.4rem;font-weight:500;letter-spacing:.22em;text-transform:up
 </svg>
 
 <section class="welcome" id="top">
-  <img src="Panneau de Bienvenue_V2.jpg" alt="Bienvenue au mariage d'Isabelle &amp; Didier, 26 juin 2027, Île Maurice. Merci d'être ici pour partager ce moment si important pour nous.">
+  <img src="Panneau_de_Bienvenue_V2.jpg" alt="Bienvenue au mariage d'Isabelle &amp; Didier, 26 juin 2027, Île Maurice. Merci d'être ici pour partager ce moment si important pour nous.">
   <a href="#voyage" class="scroll-cue bounce" aria-label="Découvrir le carnet de voyage">↓</a>
 </section>
 
@@ -256,7 +255,7 @@ h1.title{font-size:1.4rem;font-weight:500;letter-spacing:.22em;text-transform:up
   <div class="card">
     <img src="escale1.jpg" alt="Parc de l'Hôtel de Ville, Saint-Doulchard">
     <div class="content">
-      <svg class="leaf-corner"><use href="#leafGold"/></svg>
+      <img class="leaf-corner" src="BouquetTropical01-removebg-preview2.png" alt="">
       <div class="badge">📍 Escale n°1</div>
       <h2>Notre première rencontre</h2>
       <div class="passport">Lieu • Saint-Doulchard • 2006</div>
@@ -268,7 +267,7 @@ h1.title{font-size:1.4rem;font-weight:500;letter-spacing:.22em;text-transform:up
   <div class="card">
     <img src="escale2.jpg" alt="Premières vacances en famille, Vendée">
     <div class="content">
-      <svg class="leaf-corner"><use href="#leafGold"/></svg>
+      <img class="leaf-corner" src="BouquetTropical01-removebg-preview2.png" alt="">
       <div class="badge">👨‍👩‍👧‍👦 Escale n°2</div>
       <h2>Nos premières vacances en famille</h2>
       <div class="passport">Lieu • Vendée • Été 2006</div>
@@ -279,7 +278,7 @@ h1.title{font-size:1.4rem;font-weight:500;letter-spacing:.22em;text-transform:up
   <div class="card">
     <img src="escale2_1.jpg" alt="Naissance de Lucie, Bourges, mai 2009">
     <div class="content">
-      <svg class="leaf-corner"><use href="#leafGold"/></svg>
+      <img class="leaf-corner" src="BouquetTropical01-removebg-preview2.png" alt="">
       <div class="badge">👶 Escale n°3</div>
       <h2>La naissance de Lucie</h2>
       <div class="passport">✦ Lieu • Bourges • Mai 2009 ✦</div>
@@ -290,7 +289,7 @@ h1.title{font-size:1.4rem;font-weight:500;letter-spacing:.22em;text-transform:up
   <div class="card">
     <img src="escale3.jpg" alt="Premier voyage hors de France, Martinique">
     <div class="content">
-      <svg class="leaf-corner"><use href="#leafGold"/></svg>
+      <img class="leaf-corner" src="BouquetTropical01-removebg-preview2.png" alt="">
       <div class="badge">🌴 Escale n°4</div>
       <h2>Notre premier voyage hors de France</h2>
       <div class="passport">Lieu • Martinique • 2022</div>
@@ -301,7 +300,7 @@ h1.title{font-size:1.4rem;font-weight:500;letter-spacing:.22em;text-transform:up
   <div class="card">
     <img src="escale4.jpg" class="dark-photo" alt="La demande en mariage">
     <div class="content">
-      <svg class="leaf-corner"><use href="#leafGold"/></svg>
+      <img class="leaf-corner" src="BouquetTropical01-removebg-preview2.png" alt="">
       <div class="badge">💍 Escale n°5</div>
       <h2>La demande en mariage</h2>
       <div class="passport">Approuvé • Mariage • Mai 2026</div>
@@ -312,8 +311,8 @@ h1.title{font-size:1.4rem;font-weight:500;letter-spacing:.22em;text-transform:up
   <div class="card final">
     <img src="maurice.jpg" alt="Île Maurice, table d'honneur">
     <div class="content">
-      <svg class="leaf-corner"><use href="#leafGold"/></svg>
-      <svg class="leaf-corner bottom"><use href="#leafGold"/></svg>
+      <img class="leaf-corner" src="BouquetTropical01-removebg-preview2.png" alt="">
+      <img class="leaf-corner bottom" src="BouquetTropical01-removebg-preview2.png" alt="">
       <div class="badge">🌴 Destination finale</div>
       <h2>Île Maurice</h2>
       <div class="passport">Voyage de noces • Maurice • 2028</div>
