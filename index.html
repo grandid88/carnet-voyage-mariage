@@ -86,7 +86,24 @@ h1.title{font-size:1.4rem;font-weight:500;letter-spacing:.22em;text-transform:up
 .badge{color:var(--gold-deep);font-weight:600;letter-spacing:.24em;text-transform:uppercase;font-size:.82rem}
 .card h2{font-size:1.7rem;font-weight:600;margin:10px 0 12px;color:var(--ink)}
 .place{font-style:italic;color:var(--sage)}
-.passport{display:inline-block;border:1.5px dashed var(--gold);padding:6px 16px;margin:12px 0;font-size:.82rem;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-deep);border-radius:30px}
+.passport{
+  display:inline-flex;align-items:center;gap:8px;
+  margin:14px 0 10px;
+  padding:9px 20px;
+  font-size:.78rem;letter-spacing:.22em;text-transform:uppercase;
+  color:var(--gold-deep);
+  border:1.5px solid var(--gold);
+  border-radius:4px;
+  background:linear-gradient(135deg,rgba(236,217,173,.18),rgba(201,161,74,.08));
+  box-shadow:inset 0 0 0 3px rgba(201,161,74,.12), 0 2px 8px rgba(156,122,45,.10);
+  position:relative;
+}
+.passport::before,.passport::after{
+  content:'✦';font-size:.55rem;color:var(--gold);opacity:.7;flex-shrink:0;
+}
+
+/* Photo sombre escale4 : légère correction de luminosité */
+.card img.dark-photo{filter:brightness(1.18) contrast(1.05)}
 
 .leaf-corner{position:absolute;top:-10px;right:10px;width:52px;height:auto;opacity:.3;pointer-events:none;transform:rotate(18deg);z-index:0}
 .card:nth-child(even) .leaf-corner{left:10px;right:auto;transform:scaleX(-1) rotate(18deg)}
@@ -96,7 +113,7 @@ h1.title{font-size:1.4rem;font-weight:500;letter-spacing:.22em;text-transform:up
 .card.final .leaf-corner.bottom{top:auto;bottom:-10px;right:auto;left:10px;transform:scaleX(-1) rotate(-12deg);opacity:.3}
 
 /* ---------- FOOTER ---------- */
-.footer{position:relative;padding:110px 20px 90px;text-align:center;background:linear-gradient(180deg,var(--cream) 0%,var(--cream-deep) 100%);overflow:hidden}
+.footer{position:relative;padding:56px 20px 70px;text-align:center;background:linear-gradient(180deg,var(--cream) 0%,var(--cream-deep) 100%);overflow:hidden}
 .footer-deco{position:absolute;top:50%;left:50%;transform:translate(-50%,-58%);width:320px;height:auto;opacity:.16;z-index:0}
 .footer h2{position:relative;z-index:1;font-size:1.5rem;font-weight:600;max-width:480px;margin:0 auto 16px;color:var(--ink)}
 .footer p.lead{position:relative;z-index:1;max-width:480px;margin:0 auto}
@@ -107,7 +124,9 @@ h1.title{font-size:1.4rem;font-weight:500;letter-spacing:.22em;text-transform:up
 /* ---------- BACK TO TOP ---------- */
 .topbtn{position:fixed;right:20px;bottom:20px;width:46px;height:46px;display:flex;align-items:center;justify-content:center;
   background:linear-gradient(135deg,var(--gold-light),var(--gold));color:#fff;text-decoration:none;border-radius:50%;
-  box-shadow:0 8px 20px rgba(156,122,45,.35);font-size:1.2rem}
+  box-shadow:0 8px 20px rgba(156,122,45,.35);font-size:1.2rem;
+  opacity:0;pointer-events:none;transition:opacity .4s ease}
+.topbtn.visible{opacity:1;pointer-events:auto}
 
 /* ---------- RESPONSIVE ---------- */
 @media (max-width:480px){
@@ -178,7 +197,7 @@ h1.title{font-size:1.4rem;font-weight:500;letter-spacing:.22em;text-transform:up
 </svg>
 
 <section class="welcome" id="top">
-  <img src="Panneau de Bienvenue_V2.jpg" alt="Bienvenue au mariage d'Isabelle &amp; Didier, 26 juin 2027, Île Maurice. Merci d'être ici pour partager ce moment si important pour nous.">
+  <img src="Panneau_de_Bienvenue_V2.jpg" alt="Bienvenue au mariage d'Isabelle &amp; Didier, 26 juin 2027, Île Maurice. Merci d'être ici pour partager ce moment si important pour nous.">
   <a href="#voyage" class="scroll-cue bounce" aria-label="Découvrir le carnet de voyage">↓</a>
 </section>
 
@@ -269,7 +288,7 @@ h1.title{font-size:1.4rem;font-weight:500;letter-spacing:.22em;text-transform:up
   </div>
 
   <div class="card">
-    <img src="escale4.jpg" alt="La demande en mariage">
+    <img src="escale4.jpg" class="dark-photo" alt="La demande en mariage">
     <div class="content">
       <svg class="leaf-corner"><use href="#leafGold"/></svg>
       <div class="badge">💍 Escale n°4</div>
@@ -304,6 +323,7 @@ h1.title{font-size:1.4rem;font-weight:500;letter-spacing:.22em;text-transform:up
 <a class="topbtn" href="#top" aria-label="Retour en haut de page">↑</a>
 
 <script>
+// Apparition des cartes au scroll
 const cards = document.querySelectorAll('.card');
 if ('IntersectionObserver' in window) {
   const observer = new IntersectionObserver((entries) => {
@@ -318,6 +338,12 @@ if ('IntersectionObserver' in window) {
 } else {
   cards.forEach(card => card.classList.add('visible'));
 }
+
+// Bouton ↑ : visible seulement après avoir scrollé au-delà du 1er écran
+const topBtn = document.querySelector('.topbtn');
+window.addEventListener('scroll', () => {
+  topBtn.classList.toggle('visible', window.scrollY > window.innerHeight * 0.6);
+}, { passive: true });
 </script>
 </body>
 </html>
