@@ -1070,6 +1070,131 @@
         margin: 20px auto 0;
         filter: drop-shadow(0 5px 8px rgba(156, 122, 45, 0.1));
       }
+      /* ---------- ESCALE 4 : MARTINIQUE ---------- */
+      .escale4-card {
+        position: relative;
+        background:
+          radial-gradient(
+            circle at 82% 12%,
+            rgba(236, 217, 173, 0.22),
+            transparent 30%
+          ),
+          var(--card);
+        border: 1px solid rgba(201, 161, 74, 0.42);
+        border-radius: 24px;
+        box-shadow: 0 18px 42px rgba(88, 76, 48, 0.12);
+        overflow: hidden;
+      }
+
+      .escale4-label {
+        position: relative;
+        z-index: 2;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: min(82%, 390px);
+        margin: 24px auto 18px;
+        padding: 10px 20px 9px;
+        color: var(--gold-deep);
+        background: linear-gradient(
+          135deg,
+          rgba(255, 253, 247, 0.98),
+          rgba(247, 237, 216, 0.96)
+        );
+        border: 1.5px solid var(--gold);
+        border-radius: 8px;
+        box-shadow:
+          inset 0 0 0 3px rgba(201, 161, 74, 0.09),
+          0 8px 22px rgba(156, 122, 45, 0.12);
+        font-size: clamp(0.78rem, 3.2vw, 0.94rem);
+        font-weight: 600;
+        letter-spacing: 0.28em;
+        text-transform: uppercase;
+      }
+
+      .escale4-label::before,
+      .escale4-label::after {
+        content: "✦";
+        margin: 0 12px;
+        color: var(--gold);
+        font-size: 0.55rem;
+        opacity: 0.8;
+      }
+
+      .escale4-photo {
+        width: calc(100% - 36px);
+        margin: 0 auto;
+        aspect-ratio: 4 / 5.35;
+        object-fit: cover;
+        object-position: center;
+        display: block;
+        border: 1px solid rgba(201, 161, 74, 0.32);
+        border-radius: 16px;
+        box-shadow: 0 12px 28px rgba(88, 76, 48, 0.1);
+      }
+
+      .escale4-content {
+        position: relative;
+        padding: 28px 28px 38px;
+        text-align: center;
+      }
+
+      .escale4-title {
+        margin: 0;
+        color: #405b45;
+        font-size: clamp(1.68rem, 6.8vw, 2.45rem);
+        line-height: 1.1;
+        font-weight: 500;
+        letter-spacing: 0.055em;
+        text-transform: uppercase;
+      }
+
+      .escale4-divider {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        width: min(260px, 72vw);
+        margin: 21px auto 18px;
+      }
+
+      .escale4-divider span {
+        flex: 1;
+        height: 1px;
+        background: var(--gold);
+        opacity: 0.55;
+      }
+
+      .escale4-divider i {
+        width: 7px;
+        height: 7px;
+        border-radius: 50%;
+        background: var(--gold);
+      }
+
+      .escale4-meta {
+        color: var(--gold-deep);
+        font-size: 0.88rem;
+        font-weight: 600;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+      }
+
+      .escale4-intro {
+        max-width: 520px;
+        margin: 22px auto 0;
+        color: var(--ink);
+        font-family: Georgia, "Times New Roman", serif;
+        font-size: clamp(1.08rem, 4.4vw, 1.3rem);
+        line-height: 1.55;
+      }
+
+      .escale4-coquillage {
+        display: block;
+        width: 92px;
+        height: auto;
+        margin: 20px auto 0;
+        filter: drop-shadow(0 5px 8px rgba(156, 122, 45, 0.1));
+      }
       .badge {
         color: var(--gold-deep);
         font-weight: 600;
@@ -1587,6 +1712,51 @@
         }
 
         .escale3-oiseau {
+          width: 82px;
+          margin-top: 18px;
+        }
+        .escale4-label {
+          width: calc(100% - 44px);
+          margin-top: 18px;
+          margin-bottom: 14px;
+          padding: 9px 12px 8px;
+          font-size: 0.64rem;
+          letter-spacing: 0.17em;
+        }
+
+        .escale4-label::before,
+        .escale4-label::after {
+          margin: 0 7px;
+          font-size: 0.48rem;
+        }
+
+        .escale4-photo {
+          width: calc(100% - 28px);
+          aspect-ratio: 4 / 5.35;
+          object-position: center;
+          border-radius: 14px;
+        }
+
+        .escale4-content {
+          padding: 24px 20px 34px;
+        }
+
+        .escale4-title {
+          font-size: 1.66rem;
+          letter-spacing: 0.045em;
+        }
+
+        .escale4-meta {
+          font-size: 0.74rem;
+          letter-spacing: 0.14em;
+        }
+
+        .escale4-intro {
+          margin-top: 19px;
+          font-size: 1.06rem;
+        }
+
+        .escale4-coquillage {
           width: 82px;
           margin-top: 18px;
         }
@@ -2221,24 +2391,28 @@
         </div>
       </div>
 
-      <div class="card">
+      <div class="card escale4-card">
+        <div class="escale4-label">ESCALE N° 4</div>
         <img
+          class="escale4-photo"
           src="escale3.jpg"
-          alt="Premier voyage hors de France, Martinique"
+          alt="Isabelle et Didier en Martinique"
         />
-        <div class="content">
-          <img
-            class="leaf-corner"
-            src="BouquetTropical01-removebg-preview2.png"
-            alt=""
-          />
-          <div class="badge">🌴 Escale n°4</div>
-          <h2>Notre premier voyage hors de France</h2>
-          <div class="passport">Lieu • Martinique • 2022</div>
-          <p>
+        <div class="escale4-content">
+          <h2 class="escale4-title">LE GOÛT DE L'ÉVASION</h2>
+          <div class="escale4-divider" aria-hidden="true">
+            <span></span><i></i><span></span>
+          </div>
+          <div class="escale4-meta">LIEU • MARTINIQUE • 2022</div>
+          <p class="escale4-intro">
             La Martinique restera à jamais le symbole de notre goût commun pour
             l'évasion.
           </p>
+          <img
+            class="escale4-coquillage"
+            src="coquillage.png"
+            alt="Coquillage"
+          />
         </div>
       </div>
 
