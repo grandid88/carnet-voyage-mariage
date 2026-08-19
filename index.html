@@ -28,12 +28,118 @@ a:focus-visible,.topbtn:focus-visible{outline:2px solid var(--gold-deep);outline
 /* ---------- ÉCRAN D'ACCUEIL (panneau de bienvenue) ---------- */
 .welcome{position:relative;min-height:100vh;min-height:100dvh;display:flex}
 .welcome img{width:100%;height:100%;object-fit:cover;display:block}
-.scroll-cue{position:absolute;bottom:max(28px,env(safe-area-inset-bottom));left:50%;transform:translateX(-50%);width:42px;height:42px;border-radius:50%;
-  display:flex;align-items:center;justify-content:center;color:#3f5c45;background:rgba(250,246,236,.75);
-  border:1.5px solid rgba(63,92,69,.35);text-decoration:none;font-size:1.2rem;z-index:1}
-.scroll-cue.bounce{animation:scrollBounce 2.2s ease-in-out infinite}
-@keyframes scrollBounce{0%,100%{transform:translate(-50%,0)}50%{transform:translate(-50%,5px)}}
-@media (prefers-reduced-motion: reduce){.scroll-cue{animation:none}}
+
+/* ---------- MESSAGE D'ACCUEIL SOUS LE PANNEAU ---------- */
+.welcome-intro{
+  position:relative;
+  overflow:hidden;
+  padding:34px 24px 18px;
+  text-align:center;
+  background:var(--cream);
+}
+.welcome-intro::before{
+  content:'';
+  position:absolute;
+  inset:0;
+  background:radial-gradient(circle at 50% 15%,rgba(255,255,255,.55),transparent 58%);
+  pointer-events:none;
+}
+.intro-divider{
+  position:relative;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:14px;
+  width:min(230px,70vw);
+  margin:0 auto 24px;
+}
+.intro-divider::before,
+.intro-divider::after{
+  content:'';
+  flex:1;
+  height:1px;
+  background:linear-gradient(90deg,transparent,var(--gold-light));
+}
+.intro-divider::after{
+  background:linear-gradient(90deg,var(--gold-light),transparent);
+}
+.intro-heart{
+  color:var(--gold-deep);
+  font-size:1.45rem;
+  line-height:1;
+  transform:translateY(-1px);
+}
+.intro-text{
+  position:relative;
+  max-width:620px;
+  margin:0 auto;
+  font-size:clamp(1.15rem,4.4vw,1.45rem);
+  line-height:1.55;
+  color:var(--ink);
+}
+.intro-text strong{font-weight:600;color:#405b45}
+.intro-text .future{
+  display:block;
+  margin-top:4px;
+  font-weight:600;
+  color:var(--gold-deep);
+}
+.intro-palm{
+  display:block;
+  width:58px;
+  height:70px;
+  margin:8px 0 2px auto;
+  color:var(--gold-deep);
+}
+.intro-separator{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  width:min(620px,92vw);
+  margin:12px auto 22px;
+}
+.intro-separator::before,
+.intro-separator::after{
+  content:'';
+  flex:1;
+  height:1px;
+  background:var(--gold);
+  opacity:.75;
+}
+.intro-separator span{
+  width:7px;
+  height:7px;
+  border-radius:50%;
+  background:var(--gold);
+  flex:none;
+}
+.scroll-instruction{
+  position:relative;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:18px;
+  max-width:560px;
+  margin:0 auto;
+  font-size:clamp(1.05rem,4vw,1.3rem);
+  line-height:1.45;
+  color:var(--ink);
+}
+.scroll-instruction strong{font-weight:600;color:#405b45}
+.scroll-hand{
+  width:42px;
+  height:52px;
+  flex:none;
+  color:#405b45;
+}
+.wave-frieze{
+  display:block;
+  width:calc(100% + 48px);
+  height:54px;
+  margin:22px -24px 0;
+  color:#9eaa94;
+  opacity:.7;
+}
 
 /* ---------- HERO (photo plein écran) ---------- */
 .hero{min-height:92vh;background:url('escale3.jpg') center/cover;position:relative;display:flex;align-items:center;justify-content:center;text-align:center;color:#fdf8ee}
@@ -129,6 +235,12 @@ h1.title{font-size:1.4rem;font-weight:500;letter-spacing:.22em;text-transform:up
 
 /* ---------- RESPONSIVE ---------- */
 @media (max-width:480px){
+  .welcome-intro{padding:30px 18px 12px}
+  .intro-text{font-size:1.15rem}
+  .intro-palm{width:50px;height:62px;margin-top:7px}
+  .scroll-instruction{gap:12px}
+  .scroll-hand{width:38px;height:48px}
+  .wave-frieze{width:calc(100% + 36px);margin-left:-18px;margin-right:-18px;height:48px}
   .names{font-size:3rem}
   h1.title{font-size:1.2rem;letter-spacing:.16em}
   .route-item{padding-left:60px}
@@ -193,11 +305,54 @@ h1.title{font-size:1.4rem;font-weight:500;letter-spacing:.22em;text-transform:up
     <use href="#flowerGold" x="20" y="200" width="50" height="50"/>
     <use href="#flowerGold" x="230" y="200" width="50" height="50"/>
   </symbol>
+  <symbol id="palmGold" viewBox="0 0 100 120">
+    <path d="M49 116 C50 91 51 68 51 45" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+    <path d="M51 45 C39 35 26 30 10 30 C25 43 37 48 51 49" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M51 45 C62 32 75 25 91 24 C79 38 67 45 51 49" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M51 47 C44 30 42 18 45 7 C54 20 56 31 53 47" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M51 47 C60 27 68 17 78 12 C73 28 65 40 52 50" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M51 116 C42 118 34 118 25 116 M51 116 C60 118 68 118 77 116" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/>
+  </symbol>
+  <symbol id="scrollHand" viewBox="0 0 60 72">
+    <path d="M29 67 C20 67 14 61 14 52 V32 C14 29 16 27 19 27 C22 27 24 29 24 32 V43" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M24 34 V18 C24 15 26 13 29 13 C32 13 34 15 34 18 V35" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+    <path d="M34 31 V21 C34 18 36 16 39 16 C42 16 44 18 44 21 V38" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+    <path d="M44 33 V25 C44 22 46 20 49 20 C52 20 54 22 54 25 V43 C54 58 45 67 29 67" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M5 12 L12 19 L19 12 M12 19 V3" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+  </symbol>
 </svg>
 
 <section class="welcome" id="top">
   <img src="Panneau_de_Bienvenue_V2.jpg" alt="Bienvenue au mariage d'Isabelle &amp; Didier, 26 juin 2027, Île Maurice. Merci d'être ici pour partager ce moment si important pour nous.">
-  <a href="#voyage" class="scroll-cue bounce" aria-label="Découvrir le carnet de voyage">↓</a>
+</section>
+
+<section class="welcome-intro" aria-label="Présentation du carnet de voyage">
+  <div class="intro-divider" aria-hidden="true">
+    <span class="intro-heart">♥</span>
+  </div>
+
+  <p class="intro-text">
+    Cette application vous invite à découvrir<br>
+    les <strong>5 escales</strong> qui ont marqué notre histoire<br>
+    et la 6ème qui nous attend :
+    <span class="future">notre voyage de noces !...</span>
+  </p>
+
+  <svg class="intro-palm" aria-hidden="true"><use href="#palmGold"/></svg>
+
+  <div class="intro-separator" aria-hidden="true"><span></span></div>
+
+  <div class="scroll-instruction">
+    <svg class="scroll-hand" aria-hidden="true"><use href="#scrollHand"/></svg>
+    <span>Faites <strong>défiler l’écran vers le bas</strong><br>pour découvrir les <strong>6 escales.</strong></span>
+  </div>
+
+  <svg class="wave-frieze" viewBox="0 0 1200 70" preserveAspectRatio="none" aria-hidden="true">
+    <path d="M0 48 C35 12 70 12 105 48 S175 84 210 48 S280 12 315 48 S385 84 420 48 S490 12 525 48 S595 84 630 48 S700 12 735 48 S805 84 840 48 S910 12 945 48 S1015 84 1050 48 S1120 12 1155 48 S1180 62 1200 48"
+      fill="none" stroke="currentColor" stroke-width="2.2"/>
+    <path d="M0 57 C35 21 70 21 105 57 S175 93 210 57 S280 21 315 57 S385 93 420 57 S490 21 525 57 S595 93 630 57 S700 21 735 57 S805 93 840 57 S910 21 945 57 S1015 93 1050 57 S1120 21 1155 57 S1180 71 1200 57"
+      fill="none" stroke="currentColor" stroke-width="1.4" opacity=".65"/>
+  </svg>
 </section>
 
 <section class="hero" id="voyage">
