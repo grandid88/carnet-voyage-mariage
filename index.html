@@ -695,6 +695,128 @@
         padding: 30px 30px 32px;
         position: relative;
       }
+      /* ---------- ESCALE 1 : PRESENTATION PREMIUM ---------- */
+      .escale1-card {
+        background:
+          radial-gradient(
+            circle at 85% 15%,
+            rgba(236, 217, 173, 0.22),
+            transparent 30%
+          ),
+          var(--card);
+        border: 1px solid rgba(201, 161, 74, 0.38);
+        border-radius: 24px;
+        box-shadow: 0 18px 42px rgba(88, 76, 48, 0.12);
+        overflow: hidden;
+      }
+      .escale1-card > img {
+        width: 100%;
+        aspect-ratio: 4/5;
+        object-fit: cover;
+        object-position: center;
+        display: block;
+        border-bottom: 1px solid rgba(201, 161, 74, 0.28);
+      }
+      .escale1-content {
+        position: relative;
+        padding: 30px 28px 42px;
+        text-align: center;
+      }
+      .escale1-label {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 12px;
+        margin: 0 0 12px;
+        color: var(--gold-deep);
+        font-size: 0.76rem;
+        font-weight: 600;
+        letter-spacing: 0.25em;
+        text-transform: uppercase;
+      }
+      .escale1-label::before,
+      .escale1-label::after {
+        content: "";
+        width: 42px;
+        height: 1px;
+        background: var(--gold);
+        opacity: 0.65;
+      }
+      .escale1-title {
+        margin: 0;
+        color: #405b45;
+        font-size: clamp(1.75rem, 7vw, 2.55rem);
+        line-height: 1.08;
+        font-weight: 500;
+        letter-spacing: 0.07em;
+        text-transform: uppercase;
+      }
+      .escale1-meta {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 4px;
+        margin: 22px auto 0;
+      }
+      .escale1-place {
+        color: var(--gold-deep);
+        font-size: 0.88rem;
+        font-weight: 600;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+      }
+      .escale1-year {
+        color: var(--ink-soft);
+        font-size: 0.92rem;
+        letter-spacing: 0.14em;
+      }
+      .escale1-location {
+        margin: 5px 0 0;
+        color: var(--sage);
+        font-family: Georgia, "Times New Roman", serif;
+        font-size: 1.02rem;
+        font-style: italic;
+      }
+      .escale1-divider {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        width: min(260px, 72vw);
+        margin: 24px auto 22px;
+      }
+      .escale1-divider span {
+        flex: 1;
+        height: 1px;
+        background: var(--gold);
+        opacity: 0.55;
+      }
+      .escale1-divider i {
+        width: 7px;
+        height: 7px;
+        border-radius: 50%;
+        background: var(--gold);
+      }
+      .escale1-intro {
+        max-width: 520px;
+        margin: 0 auto;
+        color: var(--ink);
+        font-family: Georgia, "Times New Roman", serif;
+        font-size: clamp(1.08rem, 4.4vw, 1.3rem);
+        line-height: 1.55;
+      }
+      .escale1-intro strong {
+        color: #405b45;
+        font-weight: 600;
+      }
+      .escale1-quote {
+        margin: 22px auto 0;
+        max-width: 470px;
+        color: var(--ink-soft);
+        font-family: Georgia, "Times New Roman", serif;
+        font-size: clamp(1rem, 4vw, 1.18rem);
+        line-height: 1.5;
+        font-style: italic;
+      }
       .badge {
         color: var(--gold-deep);
         font-weight: 600;
@@ -1080,6 +1202,44 @@
         }
         .content {
           padding: 24px 22px 26px;
+        }
+        .escale1-content {
+          padding: 26px 20px 36px;
+        }
+        .escale1-label {
+          font-size: 0.64rem;
+          letter-spacing: 0.18em;
+          gap: 8px;
+        }
+        .escale1-label::before,
+        .escale1-label::after {
+          width: 30px;
+        }
+        .escale1-title {
+          font-size: 1.72rem;
+          letter-spacing: 0.055em;
+        }
+        .escale1-meta {
+          margin-top: 18px;
+        }
+        .escale1-place {
+          font-size: 0.74rem;
+          letter-spacing: 0.15em;
+        }
+        .escale1-year {
+          font-size: 0.82rem;
+        }
+        .escale1-location {
+          font-size: 0.92rem;
+        }
+        .escale1-divider {
+          margin: 20px auto 18px;
+        }
+        .escale1-intro {
+          font-size: 1.06rem;
+        }
+        .escale1-quote {
+          font-size: 0.98rem;
         }
       }
 
@@ -1591,22 +1751,27 @@
         </div>
       </section>
 
-      <div class="card">
+      <div class="card escale1-card">
         <img
           src="escale1.jpg"
           alt="Parc de l'Hôtel de Ville, Saint-Doulchard"
         />
-        <div class="content">
-          <img
-            class="leaf-corner"
-            src="BouquetTropical01-removebg-preview2.png"
-            alt=""
-          />
-          <div class="badge">📍 Escale n°1</div>
-          <h2>Notre première rencontre</h2>
-          <div class="passport">Lieu • Saint-Doulchard • 2006</div>
-          <div class="place">Parc de l'Hôtel de Ville</div>
-          <p>C'est ici que notre histoire a commencé.</p>
+        <div class="escale1-content">
+          <div class="escale1-label">ESCALE N°1</div>
+          <h2 class="escale1-title">LE PREMIER TÊTE À TÊTE</h2>
+          <div class="escale1-meta">
+            <div class="escale1-place">SAINT-DOULCHARD</div>
+            <div class="escale1-year">2006</div>
+            <div class="escale1-location">Parc de l'Hôtel de Ville</div>
+          </div>
+          <div class="escale1-divider" aria-hidden="true">
+            <span></span><i></i><span></span>
+          </div>
+          <p class="escale1-intro">C’est ici que notre histoire a commencé.</p>
+          <p class="escale1-quote">
+            Une rencontre, un hasard…<br />
+            et le début d’une belle histoire.
+          </p>
         </div>
       </div>
 
