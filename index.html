@@ -458,59 +458,211 @@
         background: #c9a14a;
         opacity: 0.72;
       }
-      /* ---------- ROUTE / TIMELINE ---------- */
-      .route {
+      /* ---------- PAGE 3 : CARTE DE NOTRE HISTOIRE ---------- */
+      .history-page {
         position: relative;
-        max-width: 460px;
-        margin: 0 auto 70px;
+        padding: 48px 18px 58px;
+        background:
+          radial-gradient(
+            circle at 50% 0%,
+            rgba(236, 217, 173, 0.34),
+            transparent 34%
+          ),
+          var(--cream);
+        overflow: hidden;
       }
-      .route-item {
-        position: relative;
-        padding-left: 68px;
-        min-height: 56px;
-        margin-bottom: 32px;
-      }
-      .route-item:last-child {
-        margin-bottom: 0;
-      }
-      .route-item:not(:last-child)::after {
+      .history-page::before {
         content: "";
         position: absolute;
-        left: 26px;
-        top: 56px;
-        width: 0;
-        height: calc(100% - 4px);
-        border-left: 2px dotted var(--gold);
+        inset: 18px;
+        border: 1px solid rgba(201, 161, 74, 0.28);
+        border-radius: 26px;
+        pointer-events: none;
       }
-      .route-icon {
-        position: absolute;
-        left: 0;
-        top: 0;
-        width: 54px;
-        height: 54px;
-        border-radius: 50%;
-        background: var(--card);
-        border: 2px solid var(--gold);
+      .history-head {
+        position: relative;
+        z-index: 1;
+        max-width: 680px;
+        margin: 0 auto 34px;
+        text-align: center;
+      }
+      .history-kicker {
+        margin: 0 0 7px;
+        color: var(--gold-deep);
+        font-size: clamp(0.78rem, 3.2vw, 0.96rem);
+        font-weight: 600;
+        letter-spacing: 0.28em;
+        text-transform: uppercase;
+      }
+      .history-title {
+        margin: 0;
+        color: #405b45;
+        font-size: clamp(2rem, 8vw, 3.1rem);
+        line-height: 1.05;
+        font-weight: 500;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+      }
+      .history-subtitle {
+        margin: 12px auto 0;
+        max-width: 560px;
+        color: var(--ink-soft);
+        font-family: Georgia, "Times New Roman", serif;
+        font-size: clamp(1rem, 4vw, 1.2rem);
+        line-height: 1.45;
+        font-style: italic;
+      }
+      .history-ornament {
         display: flex;
         align-items: center;
         justify-content: center;
-        font-size: 1.5rem;
-        box-shadow: 0 6px 14px rgba(156, 122, 45, 0.16);
+        gap: 10px;
+        width: min(260px, 70vw);
+        margin: 18px auto 0;
       }
-      .route-text {
+      .history-ornament span {
+        flex: 1;
+        height: 1px;
+        background: var(--gold);
+        opacity: 0.72;
+      }
+      .history-ornament i {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: var(--gold);
+      }
+      .history-route {
+        position: relative;
+        z-index: 1;
+        width: min(760px, 100%);
+        margin: 0 auto;
+        padding: 8px 0 0;
+      }
+      .history-route::before {
+        content: "";
+        position: absolute;
+        left: 50%;
+        top: 0;
+        bottom: 0;
+        width: 1px;
+        background: linear-gradient(
+          to bottom,
+          transparent 0,
+          var(--gold) 6%,
+          var(--gold) 94%,
+          transparent 100%
+        );
+        opacity: 0.72;
+        transform: translateX(-50%);
+      }
+      .history-item {
+        position: relative;
+        width: 50%;
+        min-height: 100px;
         display: flex;
-        flex-direction: column;
-        justify-content: center;
-        min-height: 54px;
+        align-items: center;
+        margin: 0 0 12px;
       }
-      .route-text .year {
-        font-weight: 600;
-        letter-spacing: 0.06em;
+      .history-item:nth-child(odd) {
+        padding-right: 58px;
+        justify-content: flex-end;
+        text-align: right;
+      }
+      .history-item:nth-child(even) {
+        margin-left: 50%;
+        padding-left: 58px;
+        justify-content: flex-start;
+        text-align: left;
+      }
+      .history-item:last-child {
+        margin-bottom: 0;
+      }
+      .history-marker {
+        position: absolute;
+        top: 50%;
+        width: 48px;
+        height: 48px;
+        margin-top: -24px;
+        border: 1.5px solid var(--gold);
+        border-radius: 50%;
+        background: rgba(255, 253, 247, 0.94);
+        box-shadow: 0 7px 18px rgba(156, 122, 45, 0.13);
+        display: flex;
+        align-items: center;
+        justify-content: center;
         color: var(--gold-deep);
       }
-      .route-text .label {
+      .history-item:nth-child(odd) .history-marker {
+        right: -24px;
+      }
+      .history-item:nth-child(even) .history-marker {
+        left: -24px;
+      }
+      .history-marker svg {
+        width: 27px;
+        height: 27px;
+        stroke: currentColor;
+        fill: none;
+        stroke-width: 1.8;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+      }
+      .history-copy {
+        max-width: 300px;
+      }
+      .history-number {
+        color: var(--gold-deep);
+        font-size: 0.7rem;
+        font-weight: 600;
+        letter-spacing: 0.24em;
+        text-transform: uppercase;
+      }
+      .history-year {
+        display: block;
+        margin-top: 1px;
+        color: var(--gold-deep);
+        font-size: 1.2rem;
+        font-weight: 600;
+        letter-spacing: 0.14em;
+      }
+      .history-label {
+        display: block;
+        margin-top: 1px;
+        color: #405b45;
+        font-size: clamp(1.15rem, 4.8vw, 1.48rem);
+        line-height: 1.08;
+        font-weight: 600;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+      }
+      .history-place {
+        display: block;
+        margin-top: 4px;
         color: var(--ink-soft);
+        font-family: Georgia, "Times New Roman", serif;
+        font-size: 0.95rem;
         font-style: italic;
+      }
+      .history-end {
+        position: relative;
+        z-index: 1;
+        margin: 22px auto 0;
+        text-align: center;
+        color: var(--gold-deep);
+        font-size: 0.74rem;
+        font-weight: 600;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+      }
+      .history-end::before {
+        content: "";
+        display: block;
+        width: 90px;
+        height: 1px;
+        margin: 0 auto 12px;
+        background: var(--gold);
+        opacity: 0.65;
       }
 
       /* ---------- CARDS ---------- */
@@ -849,17 +1001,79 @@
           margin-right: -18px;
           height: 48px;
         }
-        .route-item {
-          padding-left: 60px;
+        .history-page {
+          padding: 34px 14px 46px;
         }
-        .route-icon {
-          width: 48px;
-          height: 48px;
-          font-size: 1.3rem;
+        .history-page::before {
+          inset: 10px;
+          border-radius: 20px;
         }
-        .route-item:not(:last-child)::after {
-          left: 23px;
-          top: 50px;
+        .history-head {
+          margin-bottom: 25px;
+        }
+        .history-kicker {
+          font-size: 0.7rem;
+          letter-spacing: 0.2em;
+        }
+        .history-title {
+          font-size: 2.05rem;
+          letter-spacing: 0.08em;
+        }
+        .history-subtitle {
+          font-size: 0.98rem;
+          margin-top: 8px;
+        }
+        .history-ornament {
+          margin-top: 14px;
+        }
+        .history-route {
+          padding-top: 2px;
+        }
+        .history-item {
+          min-height: 91px;
+          margin-bottom: 8px;
+        }
+        .history-item:nth-child(odd) {
+          padding-right: 42px;
+        }
+        .history-item:nth-child(even) {
+          padding-left: 42px;
+        }
+        .history-marker {
+          width: 40px;
+          height: 40px;
+          margin-top: -20px;
+        }
+        .history-item:nth-child(odd) .history-marker {
+          right: -20px;
+        }
+        .history-item:nth-child(even) .history-marker {
+          left: -20px;
+        }
+        .history-marker svg {
+          width: 23px;
+          height: 23px;
+        }
+        .history-number {
+          font-size: 0.54rem;
+          letter-spacing: 0.15em;
+        }
+        .history-year {
+          font-size: 1rem;
+          letter-spacing: 0.1em;
+        }
+        .history-label {
+          font-size: 1.08rem;
+          letter-spacing: 0.035em;
+        }
+        .history-place {
+          font-size: 0.76rem;
+          line-height: 1.25;
+        }
+        .history-end {
+          font-size: 0.62rem;
+          letter-spacing: 0.13em;
+          margin-top: 16px;
         }
         .leaf-corner {
           width: 64px;
@@ -1249,10 +1463,9 @@
           <div class="journey-marker" aria-hidden="true">
             <span></span><i></i><span></span>
           </div>
-          <h2 class="escale-title">LE DÉBUT DE L’AVENTURE</h2>
+          <h2 class="escale-title">LE PREMIER TETE A TETE</h2>
           <p class="escale-teaser">
-            Une rencontre sur internet, des échanges…<br />et le début d’une
-            belle histoire.
+            Une rencontre, un hasard…<br />et le début d’une belle histoire.
           </p>
           <div class="story-route" aria-hidden="true">
             <div class="story-node">
@@ -1277,47 +1490,108 @@
     </section>
 
     <div class="container">
-      <p class="section-kicker">Notre itinéraire</p>
+      <section class="history-page">
+        <div class="history-head">
+          <p class="history-kicker">La carte de notre histoire</p>
+          <h2 class="history-title">NOTRE HISTOIRE</h2>
+          <p class="history-subtitle">5 escales qui ont marqué notre voyage</p>
+          <div class="history-ornament" aria-hidden="true">
+            <span></span><i></i><span></span>
+          </div>
+        </div>
 
-      <div class="route">
-        <div class="route-item">
-          <div class="route-icon">📍</div>
-          <div class="route-text">
-            <span class="year">2006</span><span class="label">Rencontre</span>
+        <div class="history-route">
+          <div class="history-item">
+            <div class="history-copy">
+              <span class="history-number">01 · LA RENCONTRE</span>
+              <span class="history-year">2006</span>
+              <span class="history-label">Le début de l’aventure</span>
+              <span class="history-place">Saint-Doulchard</span>
+            </div>
+            <div class="history-marker" aria-hidden="true">
+              <svg viewBox="0 0 32 32">
+                <path d="M9 22c3-3 5-5 7-5s4 2 7 5" />
+                <path
+                  d="M10 11c0-2 1.5-4 4-4 2 0 3 1.5 3 3 0-1.5 1-3 3-3 2.5 0 4 2 4 4 0 5-7 9-7 9s-7-4-7-9z"
+                />
+              </svg>
+            </div>
+          </div>
+
+          <div class="history-item">
+            <div class="history-marker" aria-hidden="true">
+              <svg viewBox="0 0 32 32">
+                <path d="M10 22c0-6 3-11 6-11s6 5 6 11" />
+                <path d="M9 22h14" />
+                <path d="M13 9c1-2 2-3 3-3s2 1 3 3" />
+              </svg>
+            </div>
+            <div class="history-copy">
+              <span class="history-number">02 · UN NOUVEAU CHAPITRE</span>
+              <span class="history-year">2009</span>
+              <span class="history-label">La naissance de Lucie</span>
+              <span class="history-place">Bourges · 9 Mai</span>
+            </div>
+          </div>
+
+          <div class="history-item">
+            <div class="history-copy">
+              <span class="history-number">03 · LE PREMIER GRAND VOYAGE</span>
+              <span class="history-year">2022</span>
+              <span class="history-label">Martinique</span>
+              <span class="history-place"
+                >Notre première grande escapade au soleil</span
+              >
+            </div>
+            <div class="history-marker" aria-hidden="true">
+              <svg viewBox="0 0 32 32">
+                <path d="M16 27V10" />
+                <path d="M16 13c-4-5-7-6-9-6 1 4 3 7 9 9" />
+                <path d="M16 15c4-5 7-6 9-6-1 4-3 7-9 9" />
+                <path d="M11 27h10" />
+              </svg>
+            </div>
+          </div>
+
+          <div class="history-item">
+            <div class="history-marker" aria-hidden="true">
+              <svg viewBox="0 0 32 32">
+                <circle cx="16" cy="17" r="8" />
+                <path d="M11 12l5-5 5 5" />
+                <path d="M16 9v8" />
+              </svg>
+            </div>
+            <div class="history-copy">
+              <span class="history-number">04 · LA DEMANDE</span>
+              <span class="history-year">2026</span>
+              <span class="history-label">Elle a dit oui !</span>
+              <span class="history-place">Tours · Mai 2026</span>
+            </div>
+          </div>
+
+          <div class="history-item">
+            <div class="history-copy">
+              <span class="history-number">05 · LE BELLE CONCLUSION</span>
+              <span class="history-year">2027</span>
+              <span class="history-label">Notre mariage</span>
+              <span class="history-place">26 juin 2027</span>
+            </div>
+            <div class="history-marker" aria-hidden="true">
+              <svg viewBox="0 0 32 32">
+                <path d="M7 27V12h18v15" />
+                <path d="M5 27h22" />
+                <path d="M10 12V8h12v4" />
+                <path d="M12 17h2M18 17h2M12 21h2M18 21h2" />
+                <path d="M16 8V5" />
+              </svg>
+            </div>
           </div>
         </div>
-        <div class="route-item">
-          <div class="route-icon">👶</div>
-          <div class="route-text">
-            <span class="year">2009</span
-            ><span class="label">Naissance de Lucie</span>
-          </div>
+
+        <div class="history-end">
+          La suite de notre voyage reste à découvrir…
         </div>
-        <div class="route-item">
-          <div class="route-icon">🌴</div>
-          <div class="route-text">
-            <span class="year">2022</span><span class="label">Martinique</span>
-          </div>
-        </div>
-        <div class="route-item">
-          <div class="route-icon">💍</div>
-          <div class="route-text">
-            <span class="year">2026</span><span class="label">Demande</span>
-          </div>
-        </div>
-        <div class="route-item">
-          <div class="route-icon">💒</div>
-          <div class="route-text">
-            <span class="year">2027</span><span class="label">Mariage</span>
-          </div>
-        </div>
-        <div class="route-item">
-          <div class="route-icon">🌴</div>
-          <div class="route-text">
-            <span class="year">2028</span><span class="label">Île Maurice</span>
-          </div>
-        </div>
-      </div>
+      </section>
 
       <div class="card">
         <img
