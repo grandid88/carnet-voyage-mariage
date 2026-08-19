@@ -697,58 +697,75 @@
       }
       /* ---------- ESCALE 1 : PRESENTATION PREMIUM ---------- */
       .escale1-card {
+        position: relative;
         background:
           radial-gradient(
-            circle at 85% 15%,
-            rgba(236, 217, 173, 0.22),
+            circle at 82% 16%,
+            rgba(236, 217, 173, 0.24),
             transparent 30%
           ),
           var(--card);
-        border: 1px solid rgba(201, 161, 74, 0.38);
+        border: 1px solid rgba(201, 161, 74, 0.42);
         border-radius: 24px;
         box-shadow: 0 18px 42px rgba(88, 76, 48, 0.12);
         overflow: hidden;
       }
-      .escale1-card > img {
-        width: 100%;
-        aspect-ratio: 4/5;
-        object-fit: cover;
-        object-position: center;
-        display: block;
-        border-bottom: 1px solid rgba(201, 161, 74, 0.28);
-      }
-      .escale1-content {
-        position: relative;
-        padding: 30px 28px 42px;
-        text-align: center;
-      }
       .escale1-label {
+        position: relative;
+        z-index: 2;
         display: flex;
         align-items: center;
         justify-content: center;
-        gap: 12px;
-        margin: 0 0 12px;
+        width: min(82%, 390px);
+        margin: 24px auto 18px;
+        padding: 10px 20px 9px;
         color: var(--gold-deep);
-        font-size: 0.76rem;
+        background: linear-gradient(
+          135deg,
+          rgba(255, 253, 247, 0.98),
+          rgba(247, 237, 216, 0.96)
+        );
+        border: 1.5px solid var(--gold);
+        border-radius: 8px;
+        box-shadow:
+          inset 0 0 0 3px rgba(201, 161, 74, 0.09),
+          0 8px 22px rgba(156, 122, 45, 0.12);
+        font-size: clamp(0.78rem, 3.2vw, 0.94rem);
         font-weight: 600;
-        letter-spacing: 0.25em;
+        letter-spacing: 0.28em;
         text-transform: uppercase;
       }
       .escale1-label::before,
       .escale1-label::after {
-        content: "";
-        width: 42px;
-        height: 1px;
-        background: var(--gold);
-        opacity: 0.65;
+        content: "✦";
+        margin: 0 12px;
+        color: var(--gold);
+        font-size: 0.55rem;
+        opacity: 0.8;
+      }
+      .escale1-card > img {
+        width: calc(100% - 36px);
+        margin: 0 auto;
+        aspect-ratio: 4 / 5;
+        object-fit: cover;
+        object-position: center;
+        display: block;
+        border: 1px solid rgba(201, 161, 74, 0.32);
+        border-radius: 16px;
+        box-shadow: 0 12px 28px rgba(88, 76, 48, 0.10);
+      }
+      .escale1-content {
+        position: relative;
+        padding: 28px 28px 42px;
+        text-align: center;
       }
       .escale1-title {
         margin: 0;
         color: #405b45;
-        font-size: clamp(1.75rem, 7vw, 2.55rem);
+        font-size: clamp(1.72rem, 7vw, 2.55rem);
         line-height: 1.08;
         font-weight: 500;
-        letter-spacing: 0.07em;
+        letter-spacing: 0.065em;
         text-transform: uppercase;
       }
       .escale1-meta {
@@ -756,7 +773,7 @@
         flex-direction: column;
         align-items: center;
         gap: 4px;
-        margin: 22px auto 0;
+        margin: 20px auto 0;
       }
       .escale1-place {
         color: var(--gold-deep);
@@ -782,7 +799,7 @@
         align-items: center;
         gap: 10px;
         width: min(260px, 72vw);
-        margin: 24px auto 22px;
+        margin: 23px auto 20px;
       }
       .escale1-divider span {
         flex: 1;
@@ -804,18 +821,16 @@
         font-size: clamp(1.08rem, 4.4vw, 1.3rem);
         line-height: 1.55;
       }
-      .escale1-intro strong {
-        color: #405b45;
-        font-weight: 600;
+      .escale1-colibri {
+        display: block;
+        width: 104px;
+        height: 82px;
+        margin: 24px auto 0;
+        color: #8a9b6e;
+        filter: drop-shadow(0 6px 10px rgba(156, 122, 45, 0.12));
       }
-      .escale1-quote {
-        margin: 22px auto 0;
-        max-width: 470px;
-        color: var(--ink-soft);
-        font-family: Georgia, "Times New Roman", serif;
-        font-size: clamp(1rem, 4vw, 1.18rem);
-        line-height: 1.5;
-        font-style: italic;
+      .escale1-colibri .gold {
+        color: var(--gold);
       }
       .badge {
         color: var(--gold-deep);
@@ -1203,21 +1218,34 @@
         .content {
           padding: 24px 22px 26px;
         }
-        .escale1-content {
-          padding: 26px 20px 36px;
-        }
         .escale1-label {
+          width: calc(100% - 44px);
+          margin-top: 18px;
+          margin-bottom: 14px;
+          padding: 9px 12px 8px;
           font-size: 0.64rem;
-          letter-spacing: 0.18em;
-          gap: 8px;
+          letter-spacing: 0.17em;
         }
         .escale1-label::before,
         .escale1-label::after {
-          width: 30px;
+          margin: 0 7px;
+          font-size: 0.48rem;
+        }
+        .escale1-card > img {
+          width: calc(100% - 28px);
+          border-radius: 14px;
+        }
+        .escale1-content {
+          padding: 24px 20px 34px;
         }
         .escale1-title {
-          font-size: 1.72rem;
-          letter-spacing: 0.055em;
+          font-size: 1.68rem;
+          letter-spacing: 0.045em;
+        }
+        .escale1-colibri {
+          width: 92px;
+          height: 68px;
+          margin-top: 21px;
         }
         .escale1-meta {
           margin-top: 18px;
@@ -1427,6 +1455,59 @@
           <text x="130" y="245">S</text>
           <text x="49" y="159">O</text>
         </g>
+      </symbol>
+
+      <symbol id="colibriGold" viewBox="0 0 180 120">
+        <path
+          d="M88 62 C102 49 119 48 133 56 C145 63 151 72 157 72 C164 72 170 68 176 61"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="4"
+          stroke-linecap="round"
+        />
+        <path
+          d="M129 55 C143 38 157 26 176 22 C165 38 151 51 132 62 Z"
+          fill="currentColor"
+          opacity=".78"
+        />
+        <path
+          d="M101 52 C87 27 65 13 43 10 C55 29 73 47 99 60 Z"
+          fill="currentColor"
+          opacity=".92"
+        />
+        <path
+          d="M96 57 C76 50 58 50 42 57 C56 67 74 71 95 66 Z"
+          fill="currentColor"
+          opacity=".72"
+        />
+        <path
+          d="M105 61 C119 70 129 82 130 98 C116 88 105 78 98 66 Z"
+          fill="currentColor"
+          opacity=".88"
+        />
+        <path
+          d="M83 61 C69 66 55 74 43 86 C59 84 74 77 88 68 Z"
+          fill="currentColor"
+          opacity=".52"
+        />
+        <ellipse cx="101" cy="61" rx="12" ry="9" fill="#405b45" />
+        <circle cx="110" cy="58" r="2.2" fill="#fffaf0" />
+        <path
+          class="gold"
+          d="M111 63 L132 68"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2.4"
+          stroke-linecap="round"
+        />
+        <path
+          d="M95 68 C90 78 82 84 73 87"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="3"
+          stroke-linecap="round"
+          opacity=".72"
+        />
       </symbol>
 
       <symbol id="wreathGold" viewBox="0 0 300 300">
@@ -1752,12 +1833,12 @@
       </section>
 
       <div class="card escale1-card">
+        <div class="escale1-label">ESCALE N° 1</div>
         <img
           src="escale1.jpg"
           alt="Parc de l'Hôtel de Ville, Saint-Doulchard"
         />
         <div class="escale1-content">
-          <div class="escale1-label">ESCALE N°1</div>
           <h2 class="escale1-title">LE PREMIER TÊTE À TÊTE</h2>
           <div class="escale1-meta">
             <div class="escale1-place">SAINT-DOULCHARD</div>
@@ -1768,10 +1849,9 @@
             <span></span><i></i><span></span>
           </div>
           <p class="escale1-intro">C’est ici que notre histoire a commencé.</p>
-          <p class="escale1-quote">
-            Une rencontre, un hasard…<br />
-            et le début d’une belle histoire.
-          </p>
+          <svg class="escale1-colibri" viewBox="0 0 180 120" aria-hidden="true">
+            <use href="#colibriGold" />
+          </svg>
         </div>
       </div>
 
